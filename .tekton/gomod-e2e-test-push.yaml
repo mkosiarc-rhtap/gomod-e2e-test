@@ -96,11 +96,11 @@ spec:
       description: Skip checks against built image
       name: skip-checks
       type: string
-    - default: "false"
+    - default: "true"
       description: Execute the build with network isolation
       name: hermetic
       type: string
-    - default: ""
+    - default: "gomod"
       description: Build dependencies to be prefetched by Cachi2
       name: prefetch-input
       type: string
@@ -108,7 +108,7 @@ spec:
       description: Image tag expiration time, time values could be something like
         1h, 2d, 3w for hours, days, and weeks, respectively.
       name: image-expires-after
-    - default: "false"
+    - default: "true"
       description: Build a source image.
       name: build-source-image
       type: string
@@ -237,7 +237,7 @@ spec:
         - name: name
           value: buildah
         - name: bundle
-          value: quay.io/konflux-ci/tekton-catalog/task-buildah:0.2@sha256:67f0290a8ad9a147cd28bb06af182b3e4b2b3ef17070196d476d8e2ae4302ecf
+          value: quay.io/mkosiarc_rhtap/task-buildah@sha256:76a54f82ecccbf520f43ea1795bc7c2dfd35469bc341fe14f4afccae4951fafc
         - name: kind
           value: task
         resolver: bundles
